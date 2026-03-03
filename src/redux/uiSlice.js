@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
+    theme: 'light',
     searchTerm: '',
     selectedSubreddit: 'popular',
     selectedPost: null,

@@ -1,18 +1,20 @@
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { setSearchTerm } from "../redux/uiSlice";
 
 const Header = () => {
     const dispatch = useDispatch();
-
-    const handleClick = () => {
-        dispatch(setSearchTerm('test'));
-        console.log('Search term updated');
-    };
+    const searchTerm = useSelector((state) => state.ui.searchTerm);
 
     return (
-        <div>
+        <div style={{ padding: '20px', borderBottom: '1px solid #ccc' }}>
             <h1>ThreadState</h1>
-            <button onClick={handleClick}>Test Redux</button>
+
+            <input 
+                type="text"
+                placeholder="Search..."
+                value={searchTerm}
+                onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+            />
         </div>
     );
 };
