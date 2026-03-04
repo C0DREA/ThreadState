@@ -10,7 +10,7 @@ export const fetchPosts = createAsyncThunk(
   "posts/fetchPosts",
   async ({ subreddit, filter }) => {
     const response = await fetch(
-      `https://www.reddit.com/r/${subreddit}/${filter}.json`
+      `https://www.reddit.com/r/${subreddit}/${filter}.json` // Reddit API endpoint for fetching posts based on subreddit and filter
     );
 
     const data = await response.json();

@@ -1,12 +1,18 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setSubreddit, setFilter } from "../redux/uiSlice";
+import { setSubreddit, setFilter } from "../../redux/uiSlice";
 
 function Sidebar() {
   const dispatch = useDispatch();
   const { selectedSubreddit, filter } = useSelector((state) => state.ui);
 
   return (
-    <div style={{ width: "250px", padding: "20px", borderRight: "1px solid #ccc" }}>
+    <div style={{
+        width: "250px",
+        padding: "20px",
+        borderRight: "1px solid #e0e0e0",
+        backgroundColor: '#ffffff',
+      }}
+    >
       <h3>Communities</h3>
 
       <p>Current: {selectedSubreddit}</p>
