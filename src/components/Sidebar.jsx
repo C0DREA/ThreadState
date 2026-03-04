@@ -18,6 +18,19 @@ function Sidebar() {
         r/javascript
       </button>
 
+      {/*Added more subreddit buttons for testing further modifications to the UI*/}
+
+      <button onClick={() => dispatch(setSubreddit('wallpapers'))}> 
+        r/wallpapers
+      </button>
+      <button onClick={() => dispatch(setSubreddit('aww'))}>
+        r/aww
+      </button>
+      <button onClick={() => dispatch(setSubreddit('technology'))}>
+        r/technology
+      </button>
+
+
       <hr />
 
       <h3>Filter</h3>

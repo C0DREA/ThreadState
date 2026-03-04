@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchPosts } from "../redux/postsSlice";
+import  PostCard  from "./PostCard";
 
 function PostFeed() {
   const dispatch = useDispatch();
@@ -18,18 +19,7 @@ function PostFeed() {
   return (
         <div>
             {posts.map((post) => (
-            <div
-                key={post.id}
-                style={{
-                border: "1px solid #ccc",
-                marginBottom: "10px",
-                padding: "10px",
-                }}
-            >
-                <h3>{post.title}</h3>
-                <p>{post.selftext}</p>
-                <p>Author: {post.author}</p>
-            </div>
+                <PostCard key={post.id} post={post} />
             ))}
         </div>
     );
