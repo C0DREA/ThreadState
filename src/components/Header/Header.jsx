@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
-import { setSearchTerm } from "../redux/uiSlice";
+import { setSearchTerm } from "../../redux/uiSlice";
+import styles from "./Header.module.css";
 
 const Header = () => {
     const dispatch = useDispatch();

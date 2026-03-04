@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchPosts } from "../../redux/postsSlice";
 import  PostCard  from "../PostCard/PostCard";
+import styles from "./PostFeed.module.css";
 
 function PostFeed() {
   const dispatch = useDispatch();

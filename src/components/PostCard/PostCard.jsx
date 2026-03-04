@@ -1,3 +1,5 @@
+import styles from "./PostCard.module.css";
+
 function PostCard({ post }) {
   const isImage = post.post_hint === "image" && post.url?.startsWith("http");
 

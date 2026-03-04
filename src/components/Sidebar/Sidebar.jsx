@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { setSubreddit, setFilter } from "../../redux/uiSlice";
+import styles from "./Sidebar.module.css";
 
 function Sidebar() {
   const dispatch = useDispatch();

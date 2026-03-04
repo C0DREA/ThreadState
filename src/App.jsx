@@ -1,6 +1,7 @@
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import PostFeed from "./components/PostFeed/PostFeed";
+import styles from './App.css';
 
 function App() {
   return (
