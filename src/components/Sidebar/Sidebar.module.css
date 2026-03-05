@@ -1,0 +1,51 @@
+.sidebar {
+  width: 250px;
+  padding: 20px;
+  border-right: 1px solid #e6e6e6;
+  background-color: white;
+  height: calc(100vh - 80px);
+}
+
+.sectionTitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #1c1c1c;
+}
+
+.current {
+  font-size: 13px;
+  color: #787c7e;
+  margin-bottom: 12px;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  background: #f6f7f8;
+  cursor: pointer;
+  text-align: left;
+  font-size: 14px;
+  transition: background 0.15s ease;
+}
+
+.button:hover {
+  background: #e9ecef;
+}
+
+.active {
+  background: #0079d3;
+  color: white;
+}
+
+.divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #e6e6e6;
+}

@@ -1,34 +1,22 @@
 import Header from "./components/Header/Header";
 import Sidebar from "./components/Sidebar/Sidebar";
 import PostFeed from "./components/PostFeed/PostFeed";
-import styles from './App.css';
+import styles from "./App.module.css";
 
 function App() {
   return (
-    <div style={{
-      minHeight: '100vh',
-      display: 'flex',
-      flexDirection: 'column',
-    }}>
+    <div className={styles.app}>
 
       <Header />
 
-      <div style={{ 
-        display: "flex",
-        marginTop: "20px",
-        flex: 1,
-      }}>
+      <div className={styles.layout}>
 
         <Sidebar />
 
-        <div style={{
-          padding: "20px",
-          flex: 1,
-          backgroundColor: '#f6f7f8'
-        }}>
+        <main className={styles.feed}>
           
           <PostFeed />
-        </div>
+        </main>
       </div>
     </div>
   );

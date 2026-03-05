@@ -18,7 +18,7 @@ function PostFeed() {
   if (error) return <p>{error}</p>;
 
   return (
-        <div>
+        <div className={styles.feed}>
             {posts.map((post) => (
                 <PostCard key={post.id} post={post} />
             ))}

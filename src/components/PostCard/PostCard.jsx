@@ -2,79 +2,48 @@ import styles from "./PostCard.module.css";
 
 function PostCard({ post }) {
   const isImage = post.post_hint === "image" && post.url?.startsWith("http");
-
   const hasText = post.selftext && post.selftext.length > 0;
 
   return (
-    <div
-      style={{
-        border: "1px solid #ccc",
-        backgroundColor: "#ffffff",
-        borderRadius: "12px",
-        padding: "20px",
-        marginBottom: "20px",
-        boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
-      }}
-    >
-      <h3 style={{
-        fontSize: '18px',
-        marginBottom: '8px',
-        lineHeight: '1.4',
-      }}
-      >
-        {post.title}
-      </h3>
+    <div className={styles.card}>
+      
+      <div className={styles.meta}>
+        <span className={styles.subreddit}>r/{post.subreddit}</span>
+        <span className={styles.author}>Posted by u/{post.author}</span>
+      </div>
 
-      <p style={{
-        fontSize: "13px",
-        color: "#666",
-        marginBottom: '12px',
-      }}
-      >
-        Posted by u/{post.author}
-      </p>
+      <h3 className={styles.title}>{post.title}</h3>
 
       {isImage && (
         <img
           src={post.url}
           alt={post.title}
-          style={{ 
-                width: "100%",
-                maxHeight: '500px',
-                objectFit: 'contain',
-                marginTop: "10px",
-                marginBottom: '12px',
-                borderRadius: '8px',
-            }}
+          className={styles.image}
         />
       )}
 
       {hasText && (
-        <p style={{
-          marginTop: "10px",
-          fontSize: '15px',
-          lineHeight: '1.6',
-          color: '#333',
-        }}
-        >
+        <p className={styles.text}>
           {post.selftext}
         </p>
       )}
 
       {!isImage && !hasText && (
-        <a 
+        <a
           href={post.url}
           target="_blank"
           rel="noreferrer"
-          style={{
-            color: '#0079d3',
-            fontWeight: '500',
-            textDecoration: 'none',
-          }}
+          className={styles.link}
         >
           View content
         </a>
       )}
+
+      <div className={styles.footer}>
+        <span>⬆ {post.ups}</span>
+        <span>💬 {post.num_comments} comments</span>
+      </div>
+
     </div>
   );
 }

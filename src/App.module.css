@@ -1,0 +1,15 @@
+.app {
+    background-color: #dae0e6;
+    min-height: 100vh;
+}
+
+.layout {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+.feed {
+    flex: 1;
+    padding: 20px;
+}

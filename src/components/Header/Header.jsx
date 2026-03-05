@@ -3,21 +3,24 @@ import { setSearchTerm } from "../../redux/uiSlice";
 import styles from "./Header.module.css";
 
 const Header = () => {
-    const dispatch = useDispatch();
-    const searchTerm = useSelector((state) => state.ui.searchTerm);
+  const dispatch = useDispatch();
+  const searchTerm = useSelector((state) => state.ui.searchTerm);
 
-    return (
-        <div style={{ padding: '20px', borderBottom: '1px solid #ccc' }}>
-            <h1>ThreadState</h1>
+  return (
+    <header className={styles.header}>
+      <div className={styles.logo}>
+        ThreadState
+      </div>
 
-            <input 
-                type="text"
-                placeholder="Search..."
-                value={searchTerm}
-                onChange={(e) => dispatch(setSearchTerm(e.target.value))}
-            />
-        </div>
-    );
+      <input
+        className={styles.search}
+        type="text"
+        placeholder="Search posts..."
+        value={searchTerm}
+        onChange={(e) => dispatch(setSearchTerm(e.target.value))}
+      />
+    </header>
+  );
 };
 
 export default Header;

@@ -6,46 +6,55 @@ function Sidebar() {
   const dispatch = useDispatch();
   const { selectedSubreddit, filter } = useSelector((state) => state.ui);
 
+  const subreddits = [
+    "reactjs",
+    "javascript",
+    "wallpapers",
+    "aww",
+    "technology",
+  ];
+
+  const filters = ["hot", "new", "top"];
+
   return (
-    <div style={{
-        width: "250px",
-        padding: "20px",
-        borderRight: "1px solid #e0e0e0",
-        backgroundColor: '#ffffff',
-      }}
-    >
-      <h3>Communities</h3>
+    <div className={styles.sidebar}>
+      <h3 className={styles.sectionTitle}>Communities</h3>
 
-      <p>Current: {selectedSubreddit}</p>
+      <p className={styles.current}>Current: r/{selectedSubreddit}</p>
 
-      <button onClick={() => dispatch(setSubreddit("reactjs"))}>
-        r/reactjs
-      </button>
-      <button onClick={() => dispatch(setSubreddit("javascript"))}>
-        r/javascript
-      </button>
+      <div className={styles.buttonGroup}>
+        {subreddits.map((sub) => (
+          <button
+            key={sub}
+            className={`${styles.button} ${
+              selectedSubreddit === sub ? styles.active : ""
+            }`}
+            onClick={() => dispatch(setSubreddit(sub))}
+          >
+            r/{sub}
+          </button>
+        ))}
+      </div>
 
-      {/*Added more subreddit buttons for testing further modifications to the UI*/}
+      <hr className={styles.divider} />
 
-      <button onClick={() => dispatch(setSubreddit('wallpapers'))}> 
-        r/wallpapers
-      </button>
-      <button onClick={() => dispatch(setSubreddit('aww'))}>
-        r/aww
-      </button>
-      <button onClick={() => dispatch(setSubreddit('technology'))}>
-        r/technology
-      </button>
+      <h3 className={styles.sectionTitle}>Filter</h3>
 
+      <p className={styles.current}>Current: {filter}</p>
 
-      <hr />
-
-      <h3>Filter</h3>
-      <p>Current: {filter}</p>
-
-      <button onClick={() => dispatch(setFilter("hot"))}>Hot</button>
-      <button onClick={() => dispatch(setFilter("new"))}>New</button>
-      <button onClick={() => dispatch(setFilter("top"))}>Top</button>
+      <div className={styles.buttonGroup}>
+        {filters.map((f) => (
+          <button
+            key={f}
+            className={`${styles.button} ${
+              filter === f ? styles.active : ""
+            }`}
+            onClick={() => dispatch(setFilter(f))}
+          >
+            {f}
+          </button>
+        ))}
+      </div>
     </div>
   );
 }
