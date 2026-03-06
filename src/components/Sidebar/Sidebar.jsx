@@ -7,11 +7,12 @@ function Sidebar() {
   const { selectedSubreddit, filter } = useSelector((state) => state.ui);
 
   const subreddits = [
-    "reactjs",
-    "javascript",
-    "wallpapers",
-    "aww",
-    "technology",
+    { name: 'reactjs', label: 'ReactJS'},
+    { name: 'gaming', label: 'Gaming'},
+    { name: 'worldnews', label: 'World News'},
+    { name: 'tech', label: 'Tech'},
+    { name: 'memes', label: 'Memes'},
+    { name: 'webdev', label: 'Web Dev'}
   ];
 
   const filters = ["hot", "new", "top"];
