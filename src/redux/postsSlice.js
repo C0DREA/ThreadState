@@ -19,6 +19,25 @@ export const fetchPosts = createAsyncThunk(
   }
 );
 
+export const fetchComments = createAsyncThunk(
+  "posts/fetchComments",
+  async (postId) => {
+    const response = await fetch(
+      `https://www.reddit.com/comments/${postId}.json`
+    );
+
+    const json = await response.json();
+
+    return {
+      postId,
+      comments: json[1].data.children
+        .filter((child) => child.kind === 't1') // Filter to include only comment objects
+        .map((child) => child.data),
+    };
+  }
+);
+
+
 const postsSlice = createSlice({
   name: "posts",
   initialState,
@@ -36,7 +55,16 @@ const postsSlice = createSlice({
       .addCase(fetchPosts.rejected, (state) => {
         state.loading = false;
         state.error = "Failed to fetch posts";
-      });
+      })
+      .addCase(fetchComments.fulfilled, (state, action) => {
+        const { postId, comments } = action.payload;
+
+        const post = state.posts.find((p) => p.id === postId);
+
+        if (post) {
+          post.comments = comments;
+        }
+      })
   },
 });
 

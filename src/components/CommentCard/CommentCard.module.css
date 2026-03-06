@@ -1,14 +1,20 @@
-.comment {
-    padding: 10px;
-    border-bottom: 1px solid #eee;
+.commentCard {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 12px;
+    margin-bottom: 10px;
 }
 
 .author {
+    font-size: 14px;
     font-weight: bold;
-    font-size: 13px;
+    margin-bottom: 6px;
+    color: #444;
 }
 
 .body {
     font-size: 14px;
-    margin-top: 4px;
+    line-height: 1.4;
+    color: #555;
 }
