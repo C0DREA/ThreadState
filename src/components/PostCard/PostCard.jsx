@@ -1,11 +1,15 @@
+import { useDispatch } from "react-redux";
+import { setSelectedPost } from "../../redux/uiSlice";
 import styles from "./PostCard.module.css";
 
 function PostCard({ post }) {
   const isImage = post.post_hint === "image" && post.url?.startsWith("http");
   const hasText = post.selftext && post.selftext.length > 0;
 
+  const dispatch = useDispatch();
+
   return (
-    <div className={styles.card}>
+    <div className={styles.card} onClick={() => dispatch(setSelectedPost(post))}>
       
       <div className={styles.meta}>
         <span className={styles.subreddit}>r/{post.subreddit}</span>

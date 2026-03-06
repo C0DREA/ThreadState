@@ -2,12 +2,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { fetchPosts } from "../../redux/postsSlice";
 import  PostCard  from "../PostCard/PostCard";
+import PostDetail from "../PostDetail/PostDetail";
 import styles from "./PostFeed.module.css";
 
 function PostFeed() {
   const dispatch = useDispatch();
 
-  const { selectedSubreddit, filter, searchTerm } = useSelector((state) => state.ui);
+  const { selectedSubreddit, filter, searchTerm, selectedPost } = useSelector((state) => state.ui);
   const { posts, loading, error } = useSelector((state) => state.posts);
 
   useEffect(() => {
@@ -16,6 +17,10 @@ function PostFeed() {
 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
+
+  if (selectedPost) {
+    return <PostDetail post={selectedPost} />;
+  }
 
   // Filter posts based on search term
   const filteredPosts = posts.filter((post) => 
