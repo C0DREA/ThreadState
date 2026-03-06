@@ -7,7 +7,7 @@ import styles from "./PostFeed.module.css";
 function PostFeed() {
   const dispatch = useDispatch();
 
-  const { selectedSubreddit, filter } = useSelector((state) => state.ui);
+  const { selectedSubreddit, filter, searchTerm } = useSelector((state) => state.ui);
   const { posts, loading, error } = useSelector((state) => state.posts);
 
   useEffect(() => {
@@ -17,11 +17,21 @@ function PostFeed() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>{error}</p>;
 
+  // Filter posts based on search term
+  const filteredPosts = posts.filter((post) => 
+    post.title.toLowerCase().includes(searchTerm.toLowerCase())
+);
+
   return (
         <div className={styles.feed}>
-            {posts.map((post) => (
-                <PostCard key={post.id} post={post} />
-            ))}
+            {/* Show message if no posts match the search term */}
+            {filteredPosts.length === 0 ? (
+                <p>No posts found.</p>
+            ) : (
+                filteredPosts.map((post) => (
+                    <PostCard key={post.id} post={post} />
+                ))
+            )}
         </div>
     );
 }
