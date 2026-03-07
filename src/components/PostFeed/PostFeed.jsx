@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { fetchPosts } from "../../redux/postsSlice";
 import  PostCard  from "../PostCard/PostCard";
 import PostDetail from "../PostDetail/PostDetail";
+import Spinner from "../Spinner/Spinner";
 import styles from "./PostFeed.module.css";
 
 function PostFeed() {
@@ -15,7 +16,7 @@ function PostFeed() {
     dispatch(fetchPosts({ subreddit: selectedSubreddit, filter }));
   }, [selectedSubreddit, filter, dispatch]);
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <Spinner />;
   if (error) return <p>{error}</p>;
 
   if (selectedPost) {
@@ -31,7 +32,9 @@ function PostFeed() {
         <div className={styles.feed}>
             {/* Show message if no posts match the search term */}
             {filteredPosts.length === 0 ? (
-                <p>No posts found.</p>
+                <div style={{ textAlign: 'center', marginTop: '40px'}}>
+                    <p>No posts found</p>
+                </div>
             ) : (
                 filteredPosts.map((post) => (
                     <PostCard key={post.id} post={post} />

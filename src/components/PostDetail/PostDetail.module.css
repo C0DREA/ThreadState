@@ -30,3 +30,13 @@
 .postDetail {
   padding: 20px;
 }
+
+.comments {
+  margin-top: 20px;
+}
+
+.noComments {
+  text-align: center;
+  margin-top: 20px;
+  color: #777;
+}

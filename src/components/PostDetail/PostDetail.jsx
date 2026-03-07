@@ -3,6 +3,7 @@ import { setSelectedPost } from "../../redux/uiSlice";
 import { useEffect } from "react";
 import { fetchComments } from "../../redux/postsSlice";
 import CommentCard from "../CommentCard/CommentCard";
+import Spinner from "../Spinner/Spinner";
 import styles from "./PostDetail.module.css";
 
 function PostDetail({ post }) {
@@ -48,14 +49,17 @@ function PostDetail({ post }) {
       {post.selftext && <p className={styles.text}>{post.selftext}</p>}
 
       <div className={styles.commentsSection}>
+        <h3>Comments</h3>
         {!updatedPost?.comments ? (
-          <p>Loading comments...</p>
+          <Spinner />
         ) : updatedPost.comments.length > 0 ? (
           updatedPost.comments.map((comment) => (
-            <CommentCard key={comment.id} comment={comment} />
+            <div key={comment.id} className={styles.comments}>
+              <CommentCard comment={comment} />
+            </div>
           ))
         ) : (
-          <p>No comments yet</p>
+          <p className={styles.noComments}>No comments yet</p>
       )}
       </div>
     </div>
