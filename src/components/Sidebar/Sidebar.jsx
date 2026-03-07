@@ -21,18 +21,18 @@ function Sidebar() {
     <div className={styles.sidebar}>
       <h3 className={styles.sectionTitle}>Communities</h3>
 
-      <p className={styles.current}>Current: r/{selectedSubreddit}</p>
+      <p className={styles.current}>Current: {selectedSubreddit}</p>
 
       <div className={styles.buttonGroup}>
         {subreddits.map((sub) => (
           <button
-            key={sub}
+            key={sub.name}
             className={`${styles.button} ${
-              selectedSubreddit === sub ? styles.active : ""
+              selectedSubreddit === sub.name ? styles.active : ""
             }`}
-            onClick={() => dispatch(setSubreddit(sub))}
+            onClick={() => dispatch(setSubreddit(sub.name))}
           >
-            r/{sub}
+            {sub.label}
           </button>
         ))}
       </div>
