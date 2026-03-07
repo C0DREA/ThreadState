@@ -13,3 +13,29 @@
     flex: 1;
     padding: 20px;
 }
+
+/* Tablet view */
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column; /* Stacking sidebar and feed vertically */
+        margin: 10px;
+    }
+
+    .feed {
+        padding: 15px;
+    }
+}
+
+/* Mobile view */
+
+@media (max-width: 480px) {
+    .layout {
+        flex-direction: column;
+        margin: 5px;
+    }
+
+    .feed {
+        padding: 10px;
+    }
+}

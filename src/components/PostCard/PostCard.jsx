@@ -44,8 +44,8 @@ function PostCard({ post }) {
       )}
 
       <div className={styles.footer}>
-        <span>⬆ {post.ups}</span>
-        <span>💬 {post.num_comments} comments</span>
+        <span className={styles.votes}>🔼 {post.ups}</span>
+        <span className={styles.comments}>💬 {post.num_comments} comments</span>
       </div>
 
     </div>

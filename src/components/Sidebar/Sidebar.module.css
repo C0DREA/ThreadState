@@ -49,3 +49,19 @@
   border: none;
   border-top: 1px solid #e6e6e6;
 }
+
+/* Tablet view */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* Mobile view */
+
+@media (max-width: 480px) {
+  .sidebar {
+    width: 100%;
+  }
+}

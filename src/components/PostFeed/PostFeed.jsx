@@ -32,8 +32,9 @@ function PostFeed() {
         <div className={styles.feed}>
             {/* Show message if no posts match the search term */}
             {filteredPosts.length === 0 ? (
-                <div style={{ textAlign: 'center', marginTop: '40px'}}>
+                <div className={styles.empty}>
                     <p>No posts found</p>
+                    <p>Try a different search term</p>
                 </div>
             ) : (
                 filteredPosts.map((post) => (

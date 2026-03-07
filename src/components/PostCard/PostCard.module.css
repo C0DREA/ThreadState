@@ -59,8 +59,15 @@
 
 .footer {
   display: flex;
+  justify-content: space-between;
   gap: 20px;
   font-size: 14px;
   color: #666;
-  margin-top: 8px;
+  margin-top: 10px;
+}
+
+.votes, .comments{
+  text-align: center;
+  margin-top: 40px;
+  color: #ff4500;
 }
