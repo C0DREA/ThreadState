@@ -5,10 +5,10 @@ It allows users to browse posts from different subreddits, search for content, a
 
 ## Live Demo
 
-👉 https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME
+👉 https://C0DREA.github.io/ThreadState/
 
 ## Screenshot
-![App Screenshot](./Wireframe,%20structure%20&%20tasks/preview.png)
+![App Screenshot](./src/assets/preview.png)
 
 ## Features
 
@@ -30,11 +30,11 @@ It allows users to browse posts from different subreddits, search for content, a
 
 ## Wireframe
 
-![Wireframe](./Wireframe,%20structure%20&%20tasks/wireframe.png)
+![Wireframe](./src/assets/wireframe.png)
 
 ## Timeline followed
 
-![Timeline](./Wireframe,%20structure%20&%20tasks/timeline.png)
+![Timeline](./src/assets/timeline.png)
 
 ## Project Structure
 
@@ -42,26 +42,32 @@ It allows users to browse posts from different subreddits, search for content, a
 src
  ├── components
  │   ├── CommentCard
-         ├── CommentCard.jsx
-         ├── CommentCard.module.css
+ │   │   ├── CommentCard.jsx
+ │   │   └── CommentCard.module.css
+ │   │
  │   ├── PostCard
-         ├── PostCard.jsx
-         ├── PostCard.module.css
+ │   │   ├── PostCard.jsx
+ │   │   └── PostCard.module.css
+ │   │
  │   ├── PostDetail
-         ├── PostDetail.jsx
-         ├── PostDetail.module.css
+ │   │   ├── PostDetail.jsx
+ │   │   └── PostDetail.module.css
+ │   │
  │   ├── PostFeed
-         ├── PostFeed.jsx
-         ├── PostFeed.module.css
+ │   │   ├── PostFeed.jsx
+ │   │   └── PostFeed.module.css
+ │   │
  │   ├── SearchBar
-         ├── SearchBar.jsx
-         ├── SearchBar.module.css
+ │   │   ├── SearchBar.jsx
+ │   │   └── SearchBar.module.css
+ │   │
  │   ├── Spinner
-         ├── Spinner.jsx
-         ├── Spinner.module.css
+ │   │   ├── Spinner.jsx
+ │   │   └── Spinner.module.css
+ │   │
  │   └── SubredditList
-         ├── SubredditList.jsx
-         └── SubredditList.module.css
+ │       ├── SubredditList.jsx
+ │       └── SubredditList.module.css
  │
  ├── redux
  │   ├── postsSlice.js
@@ -71,8 +77,8 @@ src
  ├── App.jsx
  ├── App.module.css
  ├── index.css
- ├── index.js
- └── main.jsx
+ ├── main.jsx
+
 ```
 
 ## Installation
@@ -80,13 +86,13 @@ src
 Clone the repository:
 
 ```
-git clone https://github.com/C0DREA/ThreadState
+git clone https://github.com/C0DREA/ThreadState.git
 ```
 
 Go into the project folder:
 
 ```
-cd YOUR_REPOSITORY_NAME
+cd ThreadState
 ```
 
 Install dependencies:
