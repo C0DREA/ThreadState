@@ -1,10 +1,14 @@
 # ThreadState (React + Redux Reddit client App)
 
-A simple Reddit client built with **React** and **Redux Toolkit** that allows users to browse posts, search content, and read comments from Reddit.
+This project is a **Reddit** client built with **React** and **Redux** Toolkit. 
+It allows users to browse posts from different subreddits, search for content, and view comment discussions using the **Reddit** public **API**.
 
 ## Live Demo
 
 👉 https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPOSITORY_NAME
+
+## Screenshot
+![App Screenshot](./Wireframe,%20structure%20&%20tasks/preview.png)
 
 ## Features
 
@@ -24,18 +28,40 @@ A simple Reddit client built with **React** and **Redux Toolkit** that allows us
 * CSS Modules
 * Reddit JSON API
 
+## Wireframe
+
+![Wireframe](./Wireframe,%20structure%20&%20tasks/wireframe.png)
+
+## Timeline followed
+
+![Timeline](./Wireframe,%20structure%20&%20tasks/timeline.png)
+
 ## Project Structure
 
 ```
 src
  ├── components
  │   ├── CommentCard
+         ├── CommentCard.jsx
+         ├── CommentCard.module.css
  │   ├── PostCard
+         ├── PostCard.jsx
+         ├── PostCard.module.css
  │   ├── PostDetail
+         ├── PostDetail.jsx
+         ├── PostDetail.module.css
  │   ├── PostFeed
+         ├── PostFeed.jsx
+         ├── PostFeed.module.css
  │   ├── SearchBar
+         ├── SearchBar.jsx
+         ├── SearchBar.module.css
  │   ├── Spinner
+         ├── Spinner.jsx
+         ├── Spinner.module.css
  │   └── SubredditList
+         ├── SubredditList.jsx
+         └── SubredditList.module.css
  │
  ├── redux
  │   ├── postsSlice.js
@@ -43,6 +69,9 @@ src
  │   └── store.js
  │
  ├── App.jsx
+ ├── App.module.css
+ ├── index.css
+ ├── index.js
  └── main.jsx
 ```
 
@@ -51,7 +80,7 @@ src
 Clone the repository:
 
 ```
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git
+git clone https://github.com/C0DREA/ThreadState
 ```
 
 Go into the project folder:
@@ -106,7 +135,8 @@ Redux Toolkit manages:
 
 ## Author
 
-Built by **YOUR NAME** as part of a React learning project.
+Built by **C0DREA**, part of a React learning project.
+GitHub: https://github.com/C0DREA
 
 ## License
 

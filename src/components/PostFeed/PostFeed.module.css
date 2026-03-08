@@ -1,4 +1,4 @@
-.feed {
+.feed { /* post feed container styling */
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -9,7 +9,7 @@
   padding: 10px;
 }
 
-.emtpy {
+.emtpy {  /* empty state styling */
   text-align: center;
   margin-top: 40px;
   color: #777;

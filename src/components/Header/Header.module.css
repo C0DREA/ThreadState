@@ -1,4 +1,4 @@
-.header {
+.header { /* header styling */
   position: sticky;
   top: 0;
   height: 70px;
@@ -13,13 +13,13 @@
   z-index: 100;
 }
 
-.logo {
+.logo { /* logo styling */
   font-size: 22px;
   font-weight: bold;
   color: #ff4500;
 }
 
-.search {
+.search { /* searchbar styling */
   width: 400px;
   padding: 10px 14px;
 
@@ -34,7 +34,7 @@
   transition: all 0.2s ease;
 }
 
-.search:focus {
+.search:focus { /* focus state styling */
   background: white;
   border: 1px solid #0079d3;
 }

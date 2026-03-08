@@ -1,9 +1,9 @@
-.detailContainer{
+.detailContainer{ /* detail container styling */
   max-width:900px;
   margin:auto;
 }
 
-.backButton{
+.backButton{ /* back button styling */
   margin-bottom:20px;
   padding:8px 14px;
   border:none;
@@ -13,29 +13,29 @@
   cursor:pointer;
 }
 
-.image{
+.image{ /* post image styling */
   width:100%;
   margin:20px 0;
   border-radius:8px;
 }
 
-.text{
+.text{ /* post text styling */
   line-height:1.6;
 }
 
-.commentsSection{
+.commentsSection{ /* comments section styling */
   margin-top:40px;
 }
 
-.postDetail {
+.postDetail { /* post detail styling */
   padding: 20px;
 }
 
-.comments {
+.comments { /* comments styling */
   margin-top: 20px;
 }
 
-.noComments {
+.noComments { /* no comments styling */
   text-align: center;
   margin-top: 20px;
   color: #777;

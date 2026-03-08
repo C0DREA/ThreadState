@@ -1,4 +1,4 @@
-.card {
+.card { /* post card styling */
   background: white;
   border-radius: 10px;
   padding: 18px;
@@ -14,33 +14,33 @@
   overflow: hidden;
 }
 
-.card:hover {
+.card:hover { /* hover state styling */
   transform: translateY(-2px);
 }
 
-.meta {
+.meta { /* metadata styling */
   font-size: 13px;
   color: #666;
   display: flex;
   gap: 10px;
 }
 
-.subreddit {
+.subreddit { /* subreddit name styling */
   font-weight: 600;
   color: #ff4500;
 }
 
-.author {
+.author { /* author name styling */
   color: #888;
 }
 
-.title {
+.title { /* post title styling */
   font-size: 18px;
   font-weight: 600;
   color: #222;
 }
 
-.image {
+.image { /* post image styling */
   width: 100%;
   height: auto;
   max-height: 500px;
@@ -48,7 +48,7 @@
   border-radius: 8px;
 }
 
-.text {
+.text { /* post text styling */
   font-size: 15px;
   line-height: 1.6;
   color: #333;
@@ -56,13 +56,13 @@
   overflow-wrap: anywhere;
 }
 
-.link {
+.link { /* post link styling */
   color: #0079d3;
   font-weight: 500;
   text-decoration: none;
 }
 
-.footer {
+.footer { /* footer styling */
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -71,7 +71,7 @@
   margin-top: 10px;
 }
 
-.votes, .comments{
+.votes, .comments{ /* footer's votes and comments styling */
   text-align: center;
   margin-top: 40px;
   color: #ff4500;

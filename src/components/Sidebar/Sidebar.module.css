@@ -1,4 +1,4 @@
-.sidebar {
+.sidebar { /* sidebar container styling */
   width: 250px;
   padding: 20px;
   border-right: 1px solid #e6e6e6;
@@ -6,25 +6,24 @@
   height: calc(100vh - 80px);
 }
 
-.sectionTitle {
+.sectionTitle { /* section title styling */
   font-size: 16px;
   margin-bottom: 10px;
   color: #1c1c1c;
 }
 
-.current {
+.current { /* current subreddit styling */
   font-size: 13px;
   color: #787c7e;
   margin-bottom: 12px;
 }
 
-.buttonGroup {
-  display: flex;
+.buttonGroup { /* button group styling */
   flex-direction: column;
   gap: 8px;
 }
 
-.button {
+.button { /* individual button styling */
   padding: 8px 12px;
   border-radius: 6px;
   border: none;
@@ -35,16 +34,16 @@
   transition: background 0.15s ease;
 }
 
-.button:hover {
+.button:hover { /* hover state styling */
   background: #e9ecef;
 }
 
-.active {
+.active { /* active button styling */
   background: #0079d3;
   color: white;
 }
 
-.divider {
+.divider { /* divider styling */
   margin: 20px 0;
   border: none;
   border-top: 1px solid #e6e6e6;

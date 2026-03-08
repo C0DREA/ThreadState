@@ -1,7 +1,10 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// Vite configuration for GitHub Pages deployment
+// The base path must match the repository name
+
 export default defineConfig({
+  base: "/ThreadState/",
   plugins: [react()],
 })

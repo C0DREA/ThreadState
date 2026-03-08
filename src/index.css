@@ -1,8 +1,8 @@
-* {
+* { /* global box-sizing and reset */
     box-sizing: border-box;
 }
 
-body {
+body { /* global body styling */
     margin: 0;
     font-family: system-ui, sans-serif;
 }

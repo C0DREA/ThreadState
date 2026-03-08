@@ -1,15 +1,15 @@
-.app {
+.app { /* main app container styling */
     background-color: #dae0e6;
     min-height: 100vh;
 }
 
-.layout {
+.layout { /* layout container styling */
     display: flex;
     max-width: 1200px;
     margin: 20px auto;
 }
 
-.feed {
+.feed { /* feed container styling */
     flex: 1;
     padding: 20px;
 }
