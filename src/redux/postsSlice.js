@@ -25,14 +25,16 @@ export const fetchPosts = createAsyncThunk(
   // The async function takes an object with subreddit and filter properties
   async ({ subreddit, filter }) => {
     const response = await fetch(
-      `https://www.reddit.com/r/${subreddit}/${filter}.json` // Reddit API endpoint for fetching posts based on subreddit and filter
+       `https://api.allorigins.win/get?url=https://www.reddit.com/r/${subreddit}/${filter}.json` // Reddit API endpoint for fetching posts based on subreddit and filter
     );
 
     // Parse the JSON response from the Reddit API
     const data = await response.json();
+    const parsed = JSON.parse(data.contents);
+
 
     // Map the response data to extract the relevant post information and return it as an array of post objects
-    return data.data.children.map((post) => post.data);
+    return parsed.data.children.map((post) => post.data);
   }
 );
 
@@ -43,16 +45,17 @@ export const fetchComments = createAsyncThunk(
   async (postId) => {
     // Fetch comments from the Reddit API for the given postId
     const response = await fetch(
-      `https://www.reddit.com/comments/${postId}.json`
+      `https://api.allorigins.win/get?url=https://www.reddit.com/comments/${postId}.json`
     );
 
     // Parse the JSON response from the Reddit API
     const json = await response.json();
+    const parsed = JSON.parse(json.contents);
 
     // Return an object containing the postId and an array of comments extracted from the response
     return {
       postId,
-      comments: json[1].data.children
+      comments: parsed[1].data.children
         .filter((child) => child.kind === 't1') // Filter to include only comment objects
         .map((child) => child.data),
     };
