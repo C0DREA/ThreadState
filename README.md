@@ -131,6 +131,23 @@ Redux Toolkit manages:
 * loading states
 * selected post UI
 
+## Known Limitations
+
+Due to CORS (Cross-Origin Resource Sharing) restrictions imposed by the Reddit public API, the deployed version of this application on GitHub Pages may not consistently fetch data.
+
+The application works correctly in a local development environment (`localhost`), but when deployed as a static frontend, some requests to the Reddit API may be blocked by the browser.
+
+This limitation exists because the project does not include a backend or proxy server to handle API requests.
+
+### Possible Solutions
+
+* Implement a backend proxy (Node.js / Express)
+* Use serverless functions (Netlify / Vercel)
+* Integrate an official API with proper authentication
+
+This project focuses on frontend architecture and state management using React and Redux Toolkit, and the API limitation does not affect its core learning objectives.
+
+
 ## Future Improvements
 
 * Dark mode
