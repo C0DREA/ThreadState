@@ -25,9 +25,9 @@ export const fetchPosts = createAsyncThunk(
   // The async function takes an object with subreddit and filter properties
   async ({ subreddit, filter }) => {
     const response = await fetch(
-      `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(
+      `https://api.codetabs.com/v1/proxy/?quest=${
         `https://www.reddit.com/r/${subreddit}/${filter}.json`
-      )}`
+      }`
     );
 
     const parsed = await response.json();
@@ -43,9 +43,9 @@ export const fetchComments = createAsyncThunk(
   async (postId) => {
     // Fetch comments from the Reddit API for the given postId
     const response = await fetch(
-      `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(
+      `https://api.codetabs.com/v1/proxy/?quest=${
         `https://www.reddit.com/comments/${postId}.json`
-      )}`
+      }`
     );
 
     const parsed = await response.json();
