@@ -143,7 +143,3 @@ Redux Toolkit manages:
 
 Built by **C0DREA**, part of a React learning project.
 GitHub: https://github.com/C0DREA
-
-## License
-
-This project is open source and available under the MIT License.
