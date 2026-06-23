@@ -25,13 +25,12 @@ export const fetchPosts = createAsyncThunk(
   // The async function takes an object with subreddit and filter properties
   async ({ subreddit, filter }) => {
     const response = await fetch(
-      `https://api.allorigins.win/get?url=${encodeURIComponent(
+      `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(
         `https://www.reddit.com/r/${subreddit}/${filter}.json`
       )}`
     );
 
-    const data = await response.json();
-    const parsed = JSON.parse(data.contents);
+    const parsed = await response.json();
 
     return parsed.data.children.map((post) => post.data);
   }
@@ -44,20 +43,19 @@ export const fetchComments = createAsyncThunk(
   async (postId) => {
     // Fetch comments from the Reddit API for the given postId
     const response = await fetch(
-      `https://api.allorigins.win/get?url=${encodeURIComponent(
+      `https://api.codetabs.com/v1/proxy/?quest=${encodeURIComponent(
         `https://www.reddit.com/comments/${postId}.json`
       )}`
     );
 
-    const json = await response.json();
-    const parsed = JSON.parse(json.contents);
+    const parsed = await response.json();
 
     return {
       postId,
       comments: parsed[1].data.children
         .filter((child) => child.kind === "t1")
         .map((child) => child.data),
-  };
+    };
   }
 );
 
